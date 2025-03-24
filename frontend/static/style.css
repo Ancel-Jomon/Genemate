@@ -1,0 +1,91 @@
+/* Landing Page */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e0e0e0;
+  overflow: hidden;
+}
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 80%;
+  max-width: 1200px;
+}  
+.image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.robot-image {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+.content-container {
+  flex: 1;
+  padding-left: 50px;
+}
+.content-container h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.content-container p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #c0c0c0;
+}
+#getStartedBtn {
+  background-color: #333;
+  color: #e0e0e0;
+  border: 2px solid #555;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+}
+#getStartedBtn:hover {
+  background-color: #555;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+nav ul li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #ffffff;
+}
+
+.genemate-title {
+  position: absolute;
+  top: 20px; /* Adjust to move the logo higher or lower */
+  left: 40px; /* Adjust to move the logo further left or right */
+  z-index: 1; /* Ensures the logo stays above other elements */
+  cursor: default;
+}
+
+.logo-image {
+  width: 150px; /* Adjust the width as needed */
+  height: auto; /* Maintains the aspect ratio */
+}

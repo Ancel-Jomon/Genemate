@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Genemate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto Mono', monospace;
+      background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      position: absolute;
+      top: 20px;
+      right: 40px;
+    }
+    nav ul li a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffffff;
+    }
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 15px 15px; /* Further reduced padding */
+      width: 100%;
+    }
+    .main-container h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    .main-container p {
+      font-size: 1em; /* Reduced from 1.1em to 1em */
+      margin-bottom: 30px;
+      color: #c0c0c0;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    .team-caption {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Reduced from 150px to 120px */
+      gap: 15px; /* Reduced gap */
+      padding: 15px; /* Reduced padding */
+      width: 90%; /* Adjusted width */
+      max-width: 800px; /* Further reduced max-width */
+    }
+    .team-member {
+      background: rgba(26, 26, 26, 0.8);
+      padding: 15px; /* Reduced padding */
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+    .team-member img {
+      width: 80px; /* Reduced from 100px to 80px */
+      height: 80px; /* Reduced from 100px to 80px */
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .team-member p {
+      margin-top: 10px;
+      color: #b0b0b0;
+    }
+    .team-member strong {
+      color: #e8f5f4;
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.1em; /* Slightly reduced font size */
+    }
+    footer {
+      margin-top: 20px;
+      color: #888;
+      padding-bottom: 20px;
+      font-size: 0.9em;
+    }
+    .genemate-title {
+      position: absolute;
+      top: 20px; /* Adjust to move the logo higher or lower */
+      left: 40px; /* Adjust to move the logo further left or right */
+      z-index: 1; /* Ensures the logo stays above other elements */
+      cursor: default;
+    }
+    .logo-image {
+      width: 150px; /* Adjust the width as needed */
+      height: auto; /* Maintains the aspect ratio */
+    }
+  </style>
+</head>
+<body>
+  <!-- GENEMATE Title -->
+  <div class="genemate-title">
+    <img src="images/logo.png" alt="Genemate Logo" class="logo-image">
+  </div> 
+  <!-- Navigation Bar (Support Only) -->
+  <nav>
+    <ul>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-container">
+    <!-- Main Heading -->
+    <h1>👋 About Genemate</h1>
+
+    <!-- Paragraph -->
+    <p>
+      Welcome to Genemate, where creativity meets cutting-edge technology! We are a team of passionate innovators dedicated to making 3D model generation simple and accessible for everyone. Whether you're a designer, artist, or enthusiast, Genemate empowers you to transform your ideas into stunning 3D visuals with just a few clicks.
+    </p>
+
+    <!-- Team Section Caption -->
+    <div class="team-caption">💪 Meet The Dream Team</div>
+    <p>Behind every great innovation is a group of talented minds working tirelessly. Learn more about the creators of Genemate.</p>
+
+    <!-- Team Section -->
+    <div class="team-container">
+      <!-- A. Harigovind -->
+      <div class="team-member">
+        <img src="images/harigovind.jpg" alt="A. Harigovind">
+        <p><strong>A. Harigovind</strong></p>
+      </div>
+
+      <!-- Ancel Jomon -->
+      <div class="team-member">
+        <img src="images/ancel.webp" alt="Ancel Jomon">
+        <p><strong>Ancel Jomon</strong></p>
+      </div>
+
+      <!-- Jyothish K -->
+      <div class="team-member">
+        <img src="images/jyothish.jpeg" alt="Jyothish K">
+        <p><strong>Jyothish K</strong></p>
+      </div>
+
+      <!-- Mark Choorkat -->
+      <div class="team-member">
+        <img src="images/mark.jpg" alt="Mark Choorkat">
+        <p><strong>Mark Choorakkat</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Genemate. Unleash Your Creativity.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Genemate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+ <!-- GENEMATE Title -->
+  <div id="app"></div>
+    <div class="genemate-title">
+      <img src="/static/images/logo.png" alt="Genemate Logo" class="logo-image">
+    </div> 
+      <!-- Navigation Bar (About & Support) -->
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </nav>
+    
+      <div class="main-container">
+        <!-- Image Container (Left Side) -->
+        <div class="image-container">
+          <!-- Replace "images/boy.gif" with your GIF file path -->
+          <img src="/static/images/boy.gif" alt="Animated boy Image" class="boy-image">
+        </div>
+    
+        <!-- Content Container (Right Side) -->
+        <div class="content-container">
+          <h1>Welcome to Genemate</h1>
+          <p>🌟 Turn Photos Into Stunning 3D Models Instantly!</p>
+          <button id="getStartedBtn">Get Started</button>
+        </div>
+      </div>
+    
+      <script>
+        document.getElementById('getStartedBtn').addEventListener('click', function() {
+          window.location.href = "/static/index1.html";
+        });
+      </script>
+  
+</body>
+</html>
