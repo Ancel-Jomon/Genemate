@@ -31,9 +31,9 @@ def handle_disconnect():
     print('Client disconnected')
 
 @socketio.on('run_rig')
-def handle_rig():
-    print('rig')
-    run_accurig()
+def handle_rig(path):
+    print(path)
+    run_accurig(path)
 
 @socketio.on('run_meshroom')
 def runmeshroom(path):
@@ -62,19 +62,19 @@ def handle_video_frame(data):
     process_frame(frame,socketio)
 
 @socketio.on('video_source')
-def handle_video_frame(data):
+def handle_video_frame(data,path):
     global stop_stream
-   
+    print(path)
     if data=="stop":
         stop_stream=True
     else:
         if  stop_stream:
             stop_stream=False
-        get_frames(data)
+        get_frames(data,path)
 
 
-def get_frames(data):
-      INPUT_FILE = "C:\\Users\\codec\\Downloads\\pannimark.mp4"
+def get_frames(data,path):
+      INPUT_FILE = path
 
       global stop_stream,socketio
       if data=="camera":
@@ -106,9 +106,9 @@ body_keypoint_track=None
 def process_frame(frame,socketio):
        
         global frame_rate,frame_t,objectpresent,body_keypoint_track
-        INPUT_IMAGE_SIZE = (360, 640)
-        frame = cv2.resize(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), INPUT_IMAGE_SIZE)
-
+        # INPUT_IMAGE_SIZE = (360, 640)
+        # frame = cv2.resize(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), INPUT_IMAGE_SIZE)
+        frame=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         
         if not objectpresent:
             frame_height, frame_width = frame.shape[:2]
@@ -129,7 +129,7 @@ def process_frame(frame,socketio):
         kpts3d[:, 2] =-( kpts3d[:, 2])
         frame_t +=1.0 
 
-        socketio.emit('keypoints_vector',bone(kpts3d))
+        socketio.emit('keypoints_vector',bone(kpts3d,visib))
 
 
 

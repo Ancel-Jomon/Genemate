@@ -13,16 +13,15 @@ var skeltonhelper: THREE.SkeletonHelper, skeleton: any, clock: THREE.Clock;
 
 export var model: any;
 
-const h = window.innerHeight;
-const w = window.innerWidth;
-
-
+const h = 500;
+const w = 500;
+var center :HTMLDivElement;
 
 function init() {
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(w, h);
-
-  document.body.appendChild(renderer.domElement);
+  center = document.getElementById("center") as HTMLDivElement
+  center.appendChild(renderer.domElement);
 
   clock = new THREE.Clock();
 
@@ -38,8 +37,6 @@ function init() {
   controls = new OrbitControls(camera, renderer.domElement);
 
   scene.background = new THREE.Color("rgb(255, 255, 255)");
-
-
 
   const ambientLight = new THREE.AmbientLight();
   scene.add(ambientLight);
@@ -65,7 +62,6 @@ function loadmodel() {
         skeleton = object.skeleton;
         console.log("Found skeleton:", skeleton);
       }
-
     });
 
     // skeltonhelper = new THREE.SkeletonHelper(gltf.scene);
@@ -76,9 +72,7 @@ function loadmodel() {
 export function changenew(target: any[], parent: string) {
   const parentBone = model.getObjectByName(poseBones[parent]);
 
-
   let targetDirection = new THREE.Vector3(target[0], target[1], target[2]);
-
 
   // Default bone direction
   const _tempQuat = new THREE.Quaternion();
@@ -89,8 +83,6 @@ export function changenew(target: any[], parent: string) {
   targetDirection.applyMatrix4(_tempMatrix);
 
   calculateRotationToTarget(targetDirection, _tempQuat, parent);
-
-
 
   parentBone.quaternion.slerp(_tempQuat, 0.4);
 }
@@ -128,17 +120,11 @@ function animate() {
   controls.update();
 }
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
-
   init();
   loadmodel();
   animate();
   const streamer = new VideoStreamer(socket);
-
 
   socket.on("connect", () => {
     console.log("Connected to server");
@@ -148,11 +134,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Disconnected from server");
     streamer.stopStream();
     socket.disconnect();
-
   });
   // Connect buttons
-  document.getElementById("start")?.addEventListener("click", () => {
-    streamer.startStream();
+  document.getElementById("camera")?.addEventListener("click", () => {
+    streamer.startStream("camera");
+  });
+  document.getElementById("file")?.addEventListener("click", () => {
+    streamer.startStream("file");
   });
 
   document.getElementById("stop")?.addEventListener("click", () => {

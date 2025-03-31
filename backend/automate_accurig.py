@@ -1,7 +1,7 @@
 import pyautogui
 import time
 from AppOpener import open
-def run_accurig():
+def run_accurig(path):
     try:
        
         # type: ignore
@@ -14,7 +14,7 @@ def run_accurig():
 
         # 2. Select the file in the file dialog
         print("Selecting the file...")
-        pyautogui.write(r"C:\Users\codec\Desktop\Genemate\CLI_output\13_Texturing")
+        pyautogui.write(path)
         # Replace with the actual file path
         pyautogui.click(x=308, y=235)
         pyautogui.press('enter')

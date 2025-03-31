@@ -1,14 +1,15 @@
 import numpy as np
 
-def bone(kpts3d):
+def bone(kpts3d,visib):
     dict1={}
     i=0
     for k in MEDIAPIPE_POSE_BONES:
         a,b=MEDIAPIPE_POSE_BONES_POINTS[i]
-        result=kpts3d[b]-kpts3d[a]
-        result=result/np.linalg.norm(result)
-        result=result.tolist()
-        dict1.update({k:result})
+        if visib[a] and visib[b]:
+            result=kpts3d[b]-kpts3d[a]
+            result=result/np.linalg.norm(result)
+            result=result.tolist()
+            dict1.update({k:result})
         i+=1
     return dict1
 

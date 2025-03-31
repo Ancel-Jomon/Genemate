@@ -9,18 +9,22 @@
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/src/animation.ts"></script>
+    
     <div id="videocontainer">
       <div>
         <video id="video" autoplay playsinline></video>
         <div id="buttondiv">
-          <button id="start">start</button>
+          <button id="file">file</button>
+          <input type="text" id="filepath" name="file_path" placeholder="Paste File Path Here" required>
           <button id="stop">stop</button>
+          <button id="camera">camera</button>
           
         </div>
       </div>
-      
+      <div id="center">
+
+      </div>
     </div>
-   
+    <script type="module" src="/src/animation.ts"></script>
   </body>
 </html>

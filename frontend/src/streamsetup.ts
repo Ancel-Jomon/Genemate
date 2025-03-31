@@ -7,15 +7,19 @@ class VideoStreamer {
   private socket: any;
 
   private receivedVideoElement: HTMLImageElement;
+  private center: HTMLDivElement;
 
   constructor(socket: Socket<DefaultEventsMap, DefaultEventsMap>) {
     this.receivedVideoElement = document.getElementById(
       "receivedVideo"
     ) as HTMLImageElement;
+    this.center = document.getElementById(
+      "center"
+    ) as HTMLDivElement;
     if (!this.receivedVideoElement) {
       this.receivedVideoElement = document.createElement("img");
       this.receivedVideoElement.id = "receivedVideo";
-      // document.body.appendChild(this.receivedVideoElement);
+      this.center.appendChild(this.receivedVideoElement);
     }
 
     // Connect to Socket.IO server
@@ -34,13 +38,20 @@ class VideoStreamer {
     });
   }
 
-  public startStream() {
-    console.log("file")
-    this.socket.emit("video_source", "file");
+  public startStream(option:string) {
+    console.log(option)
+    var path=""
+    if (option=="file"){
+      const textbox = document.getElementById("filepath") as HTMLInputElement;
+      path = textbox.value;
+      path=path.replace("\\","\\\\")
+    }
+    console.log(path)
+    this.socket.emit("video_source", option,path);
   }
   public stopStream() {
     console.log("stop")
-    this.socket.emit("video_source", "stop");
+    this.socket.emit("video_source", "stop","");
     this.receivedVideoElement.src = "";
   }
 

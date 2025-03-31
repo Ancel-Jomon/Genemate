@@ -19,8 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("rig")?.addEventListener("click", () => {
         console.log("rig")
+        const textbox = document.getElementById("rigpath") as HTMLInputElement;
+        const rigpath = textbox.value;
         window.location.href = "/static/animation.html";
-        socket.emit("run_rig");
+        socket.emit("run_rig",rigpath);
     });
 
     document.getElementById("animateBtn")?.addEventListener("click", () => {
@@ -31,9 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("mesh")?.addEventListener("click", () => {
         console.log("mesh")
-        window.location.href = "/static/main.html";
         const textbox = document.getElementById("folderName") as HTMLInputElement;
         const folderName = textbox.value;
+        window.location.href = "/static/main.html";
+        
         socket.emit("run_meshroom", folderName);
     });
 });
