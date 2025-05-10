@@ -25,7 +25,7 @@ For running the backend:
 
 
 ## Model Generation
-Genemate uses meshroom to generate models. The bin path to meshroom must be updated in the ```backend/meshroom_CLI.py``` file's meshmain() function. The option to generate 3D model is available in the frontend ui.
+Genemate uses meshroom to generate models. The bin path to meshroom must be updated in the ```backend/meshroom_CLI.py``` file's meshmain() function. The option to generate 3D model is available in the frontend ui. (Meshroom requires hours to generate a model and requires a large amount of input images).
 
 ## Accurig
 Accurig is used to rig the model. The pixel position of each button is used to automate the process. Accurig can be ran individually to generate a rigged model. The output is generally available in FBX format. (Note Genemate requires the model format to be in glb).
