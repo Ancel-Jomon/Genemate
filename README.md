@@ -16,7 +16,7 @@ For running the backend:
 
 ## Animation
 - The vite server launches the frontend in localhost://5173 (normally)
-- Navigate to the page "" using the browser url
+- Navigate to the page ```static/js/animationpage.html``` using the browser url
 - If using input video:
   1. Enter the file path in the input field
   2. press the file button above
