@@ -21,3 +21,13 @@ For running the backend:
   2. press the file button above
 - If uisng camera:
   1. press the camera button (Requires view of entire body else pose estimation might result in wrong output)
+
+
+## Model Generation
+Genemate uses meshroom to generate models. The bin path to meshroom must be updated in the ```backend/meshmain.py``` file's meshmain() function. The option to generate 3D model is available in the frontend ui.
+
+## Accurig
+Accurig is used to rig the model. The pixel position of each button is used to automate the process. Accurig can be ran individually to generate a rigged model. The output is generally available in FBX format. (Note Genemate requires the model format to be in glb).
+
+## FBX to GLb
+The model needs to be in GLb format to be animated. The model is placed in ``` frontend/assets```. The Github repo "" can be used to convert fbx to glb.
