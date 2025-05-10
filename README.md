@@ -31,4 +31,4 @@ Genemate uses meshroom to generate models. The bin path to meshroom must be upda
 Accurig is used to rig the model. The pixel position of each button is used to automate the process. Accurig can be ran individually to generate a rigged model. The output is generally available in FBX format. (Note Genemate requires the model format to be in glb).
 
 ## FBX to GLb
-The model needs to be in GLb format to be animated. The model is placed in ``` frontend/assets```. The Github repo "" can be used to convert fbx to glb.
+The model needs to be in GLb format to be animated. The model is placed in ``` frontend/assets```. The Github repo [FBX2GLB-Batch-Convert-Optimizer](https://github.com/crazyramirez/FBX2GLB-Batch-Convert-Optimizer) can be used to convert fbx to glb.
