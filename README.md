@@ -32,3 +32,11 @@ Accurig is used to rig the model. The pixel position of each button is used to a
 
 ## FBX to GLb
 The model needs to be in GLb format to be animated. The model in glb format should be placed in ``` frontend/assets```. The Github repo [FBX2GLB-Batch-Convert-Optimizer](https://github.com/crazyramirez/FBX2GLB-Batch-Convert-Optimizer) can be used to convert fbx to glb.
+
+
+## Sample of Animation
+
+
+https://github.com/user-attachments/assets/9714db53-365a-48b1-87d9-3c41793b2bec
+
+
